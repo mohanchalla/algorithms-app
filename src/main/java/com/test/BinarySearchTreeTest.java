@@ -1,7 +1,6 @@
 package com.test;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.datastructors.BinarySearchTree;
 
 public class BinarySearchTreeTest {
     public static void main(String[] args) {

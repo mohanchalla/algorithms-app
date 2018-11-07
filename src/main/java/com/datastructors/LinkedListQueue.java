@@ -1,4 +1,4 @@
-package com.test;
+package com.datastructors;
 
 public class LinkedListQueue<E> {
     private int size;

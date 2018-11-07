@@ -1,4 +1,4 @@
-package com.test;
+package com.datastructors;
 
 import java.util.List;
 
@@ -302,7 +302,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
             return null;
         }
         leftNode.left = _makeRightSkewedTree(leftNode.left, root);
-        leftNode.right = _makeRightSkewedTree(leftNode.right, root);
+        //leftNode.right = _makeRightSkewedTree(leftNode.right, root);
         BSTNode<E> temp = root.right;
         root.right = leftNode;
         leftNode.right = temp;

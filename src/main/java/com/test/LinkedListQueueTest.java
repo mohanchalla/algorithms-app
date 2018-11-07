@@ -1,5 +1,7 @@
 package com.test;
 
+import com.datastructors.LinkedListQueue;
+
 public class LinkedListQueueTest {
     public static void main(String[] args) {
         LinkedListQueue<Integer> queue = new LinkedListQueue<>();

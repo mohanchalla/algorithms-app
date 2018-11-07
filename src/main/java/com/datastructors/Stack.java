@@ -1,4 +1,4 @@
-package com.test;
+package com.datastructors;
 
 import java.util.Arrays;
 
@@ -7,13 +7,13 @@ public class Stack<E extends Comparable<E>> {
     private int size;
     private int top = -1;
     private Object[] data;// array to store the data
-
+    private static final int Bound = 10;
     public Stack() {
         data = new Object[DEFAULT_INITIAL_CAPACITY];
     }
 
     public void push(E element) {
-        if (top == DEFAULT_INITIAL_CAPACITY -1) {
+        if (size() == data.length -1) {
             growCapacity();
             //throw new ArrayIndexOutOfBoundsException("Stack is full!");
         }
@@ -23,7 +23,7 @@ public class Stack<E extends Comparable<E>> {
 
     private void growCapacity() {
         Object[] temp = data;
-        data = Arrays.copyOf(temp, DEFAULT_INITIAL_CAPACITY * 2);
+        data = Arrays.copyOf(temp, data.length + Bound);
     }
 
     public E pop() {

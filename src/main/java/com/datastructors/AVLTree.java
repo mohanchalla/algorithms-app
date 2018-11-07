@@ -1,4 +1,4 @@
-package com.test;
+package com.datastructors;
 
 public class AVLTree<E extends Comparable<E>> {
     private Node<E> root;
