@@ -5,14 +5,14 @@ import com.datastructors.LinkedListQueue;
 public class LinkedListQueueTest {
     public static void main(String[] args) {
         LinkedListQueue<Integer> queue = new LinkedListQueue<>();
-        queue.push(1);
-        queue.push(3);
-        queue.push(4);
-        queue.push(7);
-        queue.push(8);
+        for (int i = 1; i <= 100; i++) {
+            queue.push(i);
+        }
         System.out.println(queue.size());
-        System.out.println(queue);
-        queue.pop();
-        System.out.println(queue);
+        for (int i = 1; i <= 99; i++) {
+            queue.pop();
+        }
+        queue.push(101);
+        System.out.println(queue.peek());
     }
 }

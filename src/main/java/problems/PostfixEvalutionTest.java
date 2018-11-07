@@ -1,7 +1,6 @@
 package problems;
 
-import com.test.LinkedList;
-import com.test.Stack;
+import com.datastructors.Stack;
 
 import java.util.ArrayList;
 import java.util.List;

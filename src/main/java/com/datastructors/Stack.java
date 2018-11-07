@@ -48,4 +48,20 @@ public class Stack<E extends Comparable<E>> {
     public boolean isEmpty() {
         return top == -1;
     }
+
+    @Override
+    public String toString() {
+        if (isEmpty())
+            return "[]";
+
+        StringBuilder builder = new StringBuilder("[");
+        int top = this.top;
+        while (top != -1) {
+            builder.append(data[top]);
+            if (top != 0)
+                builder.append(", ");
+            top--;
+        }
+        return builder.append("]").toString();
+    }
 }
