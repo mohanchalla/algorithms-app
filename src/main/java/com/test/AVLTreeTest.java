@@ -1,5 +1,7 @@
 package com.test;
 
+import com.datastructors.AVLTree;
+
 public class AVLTreeTest {
     public static void main(String[] args) {
         AVLTree<Integer> tree = new AVLTree<>();
