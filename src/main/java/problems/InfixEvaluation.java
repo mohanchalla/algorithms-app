@@ -1,17 +1,14 @@
 package problems;
 
-import com.datastructors.Stack;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
- * Evaluation of postfix notation happen from left to right
- * ex: 2 3 * 5 4 * + 9 -
- * To evaluate it we need to use stack data structure we can also use List
- * but, from list also we have to take values from last two operands so stack is the best suitable data structor here.
+ * Prefix Expression evaluation scan from right to left.
+ * ex: - + * 2 3 * 5 4 9
  */
-public class PostfixEvaluation {
+public class InfixEvaluation {
     private static final List<Character> operators;
 
     static {
@@ -23,21 +20,21 @@ public class PostfixEvaluation {
     }
 
     public static void main(String[] args) {
-        String exp = "2 3 * 5 4 * + 9 -";
-        int result = evaluatePostfixExpression(exp);
+        String exp = "- + * 2 3 * 5 4 9";
+        int result = evaluatePrefix(exp);
         System.out.println(result);
     }
 
-    private static int evaluatePostfixExpression(String exp) {
+    private static int evaluatePrefix(String exp) {
         Stack<Integer> stack = new Stack<>();
         String[] tokens = exp.split(" ");
-        for (int i = 0; i < tokens.length; i++) {
+        for (int i = tokens.length - 1; i >= 0; i--) {
             char token = tokens[i].charAt(0);
             if (isOperand(token)) {
                 stack.push(Character.getNumericValue(token));
             } else {
-                int op2 = stack.pop();
                 int op1 = stack.pop();
+                int op2 = stack.pop();
                 int res = perform(op1, op2, token);
                 stack.push(res);
             }
@@ -61,17 +58,16 @@ public class PostfixEvaluation {
                 result = op1 / op2;
                 break;
             default:
-                throw new RuntimeException("Invalid operator!");
-
+                throw new IllegalArgumentException("Invalid Operator!");
         }
         return result;
     }
 
-    private static boolean isOperator(Character token) {
+    private static boolean isOperator(char token) {
         return operators.contains(token);
     }
 
-    private static boolean isOperand(Character token) {
+    private static boolean isOperand(char token) {
         return !isOperator(token);
     }
 }
