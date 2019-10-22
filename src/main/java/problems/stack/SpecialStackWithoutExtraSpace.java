@@ -1,7 +1,6 @@
-package problems;
+package problems.stack;
 
 import com.datastructors.Stack;
-import com.exception.StackUndeFlowException;
 
 public class SpecialStackWithoutExtraSpace {
     Stack<Integer> specialStack = new SpecialStack();

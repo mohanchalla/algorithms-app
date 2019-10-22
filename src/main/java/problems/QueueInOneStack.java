@@ -1,7 +1,7 @@
 package problems;
 
 import com.datastructors.Stack;
-import com.exception.QueueEmptyException;
+import problems.exception.QueueEmptyException;
 
 public class QueueInOneStack<E extends Comparable<E>> {
     Stack<E> stack = new Stack<>();

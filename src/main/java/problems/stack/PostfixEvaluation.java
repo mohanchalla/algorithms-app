@@ -1,4 +1,4 @@
-package problems;
+package problems.stack;
 
 import com.datastructors.Stack;
 
